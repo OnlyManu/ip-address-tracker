@@ -3,6 +3,7 @@
 :root {
   --color-very-dark-gray: hsl(0, 0%, 17%);
   --color-dark-gray: hsl(0, 0%, 59%);
+  --color-white: #fff;
 }
 
 html,
@@ -21,4 +22,6 @@ a {
 
 *, *::after, *::before {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }

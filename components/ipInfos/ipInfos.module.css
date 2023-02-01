@@ -1,0 +1,31 @@
+.container {
+    z-index: 999;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    row-gap: 1.5rem;
+    padding: 1.5rem 0;
+    width: calc(100% - 2rem);
+    border-radius: 0.6rem;
+    background-color: var(--color-white);
+    transform: translateY(50%) translateX(-50%);
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+}
+.info_name {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--color-dark-gray);
+}
+.info_value {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
