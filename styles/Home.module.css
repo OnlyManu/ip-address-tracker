@@ -22,8 +22,8 @@
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  height: 34vh;
-  min-height: 286px;
+  height: 33.5vh;
+  min-height: 308px;
   padding: 1.5rem 1.3rem;
   background: url("/images/pattern-bg.png");
   background-repeat: no-repeat;

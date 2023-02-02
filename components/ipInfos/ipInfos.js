@@ -1,19 +1,23 @@
 import styles from "./ipInfos.module.css"
 
-export default function IPInfos() {
+export default function IPInfos({IPLocationData}) {
     return (
         <div className={styles.container}>
             <div className={styles.info}>
-                <span className={styles.info_name}>IP Address</span>
-                <span className={styles.info_value}>192.212.174.101</span>
+                <span className={styles.info_name}>IP ADDRESS</span>
+                <span className={styles.info_value}>{IPLocationData.ip}</span>
             </div>
             <div className={styles.info}>
-                <span className={styles.info_name}>Location</span>
-                <span className={styles.info_value}>Brooklin, NY 10001</span>
+                <span className={styles.info_name}>LOCATION</span>
+                <span className={styles.info_value}>{IPLocationData.location}</span>
             </div>
             <div className={styles.info}>
-                <span className={styles.info_name}>Timezone</span>
-                <span className={styles.info_value}>SpaceX Starlink</span>
+                <span className={styles.info_name}>TIMEZONE</span>
+                <span className={styles.info_value}>{IPLocationData.timezone}</span>
+            </div>
+            <div className={styles.info}>
+                <span className={styles.info_name}>ISP</span>
+                <span className={styles.info_value}>{IPLocationData.isp}</span>
             </div>
         </div>
     )

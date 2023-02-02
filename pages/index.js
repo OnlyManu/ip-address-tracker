@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 
 import IPSearchbar from '../components/ipSearchbar/ipSearchbar'
@@ -7,8 +7,45 @@ import IPInfos from '../components/ipInfos/ipInfos'
 import IPLoaction from '../components/ipLocation/ipLocation'
 
 export default function Home() {
-  const [ip, setIp] = useState("")
-  const [locationData, setLocationData] = useState(null)
+  const [IPLocationData, setIPLocationData] = useState({
+    ip: "192.212.174.101",
+    location: "Brooklyn, NY 10001",
+    timezone: "UTC -05:00",
+    isp: "SpaceX Starlink",
+    position: {
+      lat: 0.000,
+      lng: 0.000
+    }
+  })
+
+  const searchIPlocationData = async (ip) => {
+    try {
+      const data = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_PSqAceWFJWfOHr92xwFXrVn1LkkCz&ipAddress=${ip}`).then((response) => {
+        if (response.ok) {
+          return response.json()
+        }
+      })
+
+      if (data) {
+        setIPLocationData(IPData => ({
+          ip: data.ip,
+          location: data.location.city,
+          timezone: "UTC "+data.location.timezone,
+          isp: data.isp,
+          position: {
+            lat: parseFloat(data.location.lat),
+            lng: parseFloat(data.location.lng)
+          }
+        }))
+      }
+    } catch (e) {
+      console.log("Error:"+ e)
+    }
+  }
+  
+  useEffect(() => {
+    searchIPlocationData("192.212.174.101")
+  }, [])
 
   return (
     <div className={styles.container}>
@@ -21,11 +58,11 @@ export default function Home() {
       <main className={styles.main}>
         <section className={styles.section_header}>
           <h1 className={styles.title}>IP Address Tracker</h1>
-          <IPSearchbar />
-          <IPInfos />
+          <IPSearchbar handleEvent={ searchIPlocationData } />
+          <IPInfos IPLocationData={IPLocationData} />
         </section>
         <section className={styles.section_map}>
-          <IPLoaction />
+          <IPLoaction position={IPLocationData.position} />
         </section>
       </main>
     </div>
