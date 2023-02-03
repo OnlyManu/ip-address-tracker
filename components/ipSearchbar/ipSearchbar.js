@@ -14,7 +14,7 @@ export default function IPSearchbar({ handleEvent }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         if (isCorrectlyFormated(ipAddress)) {
-            await handleEvent(ipAddress)
+            /*await handleEvent(ipAddress)*/
         }
     }
 

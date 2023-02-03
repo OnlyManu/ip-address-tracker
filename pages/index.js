@@ -13,8 +13,8 @@ export default function Home() {
     timezone: "UTC -05:00",
     isp: "SpaceX Starlink",
     position: {
-      lat: 0.000,
-      lng: 0.000
+      lat: 51.505,
+      lng: -0.09
     }
   })
 
@@ -44,7 +44,7 @@ export default function Home() {
   }
   
   useEffect(() => {
-    searchIPlocationData("192.212.174.101")
+    /*searchIPlocationData("192.212.174.101")*/
   }, [])
 
   return (

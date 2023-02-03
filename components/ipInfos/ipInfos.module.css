@@ -8,7 +8,7 @@
     align-items: center;
     row-gap: 1rem;
     padding: 1.2rem 0;
-    width: calc(100% - 2.6rem);
+    width: calc(100% - 2.4rem);
     border-radius: 0.6rem;
     background-color: var(--color-white);
     transform: translateY(50%) translateX(-50%);
@@ -28,4 +28,22 @@
 .info_value {
     font-size: 1.1rem;
     font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        padding: 1.9rem 0;
+        row-gap: 1.8rem;
+        width: calc(100% - 5rem);
+        border-radius: 0.7rem;
+    }
+    .info {
+        gap: 0.6rem;
+    }
+    .info_name {
+        font-size: 0.9rem;
+    }
+    .info_value {
+        font-size: 1.6rem;
+    }
 }
