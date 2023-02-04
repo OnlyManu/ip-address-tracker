@@ -4,7 +4,7 @@
     bottom: 0;
     left: 50%;
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
     align-items: center;
     row-gap: 1rem;
     padding: 1.2rem 0;
@@ -22,6 +22,7 @@
     align-items: center;
     text-align: center;
     gap: 0.4rem;
+    min-height: 45.188px;
 }
 .info_name {
     font-size: 0.65rem;
@@ -33,6 +34,23 @@
     font-weight: 500;
 }
 
+@media screen and (max-width: 767px) and (max-height: 667px) {
+    .container {
+        row-gap: 0.8rem;
+        padding: 1rem 0;
+        min-height: 225px;        
+    }
+    .info {
+        gap: 0.2rem;
+        min-height: 36.594px;
+    }
+    .info_name {
+        font-size: 0.65rem;
+    }
+    .info_value {
+        font-size: 0.9rem;
+    }
+}
 @media screen and (min-width: 768px) {
     .container {
         grid-template-rows: repeat(2, 1fr);
