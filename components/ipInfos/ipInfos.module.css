@@ -41,7 +41,7 @@
         row-gap: 2.2rem;
         width: calc(100% - 5rem);
         border-radius: 0.7rem;
-        min-height: 277.89px;
+        min-height: 277.88px;
     }
     .info {
         gap: 0.6rem;
@@ -67,7 +67,7 @@
         padding: 1.4rem 1rem;
         width: calc(100% - 9vw);
         border-radius: 0.8rem;
-        min-height: 132px;
+        min-height: 103.77px;
     }
     .info {
         justify-content: flex-start;
@@ -91,7 +91,7 @@
     .container {
         padding: 1.5rem 1rem;
         width: calc(100% - 20vw);
-        min-height: 141.39px
+        min-height: 113.39px;
     }
     .info_name {
         font-size: 0.8rem;

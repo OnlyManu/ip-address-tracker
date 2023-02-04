@@ -69,7 +69,7 @@ export default function Home() {
   }
   
   useEffect(() => {
-    searchUserIPlocationData()
+    /*searchUserIPlocationData()*/
   }, [])
 
   return (
@@ -81,7 +81,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <AlertBox isOpen={error.state} onClick={closeAlertBox}>{[error.message].map(message => ""+message)}</AlertBox>
+        <AlertBox isOpen={error.state} onClick={closeAlertBox}>
+          {[error.message].map(message => "" + message)}
+        </AlertBox>
         
         <section className={styles.section_header}>
           <h1 className={styles.title}>IP Address Tracker</h1>
