@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://onlymanu-ip-address-tracker.vercel.app/)
+- Solution URL: [https://www.frontendmentor.io/solutions/ip-address-tracker-with-nextjs-ipify-and-leaflet-PnINVn350H](https://www.frontendmentor.io/solutions/ip-address-tracker-with-nextjs-ipify-and-leaflet-PnINVn350H)
 - Live Site URL: [https://onlymanu-ip-address-tracker.vercel.app/](https://onlymanu-ip-address-tracker.vercel.app/)
 
 ## My process

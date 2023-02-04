@@ -69,7 +69,7 @@ export default function Home() {
   }
   
   useEffect(() => {
-    /*searchUserIPlocationData()*/
+    searchUserIPlocationData()
   }, [])
 
   return (
