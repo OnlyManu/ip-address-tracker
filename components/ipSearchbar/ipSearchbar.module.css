@@ -52,17 +52,21 @@
 }
 @media screen and (min-width: 1024px) {
     .container {
-        height: 3.2rem;
+        height: 3rem;
         width: 45vw;
         grid-template-columns: 1fr 3.4rem;
-        border-radius: 0.6rem;
+        border-radius: 0.8rem;
     }
     .input {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 }
 @media screen and (min-width: 1280px) {
     .container {
         width: 38vw;
+        height: 3.3rem;
+    }
+    .input {
+        font-size: 1.05rem;
     }
 }

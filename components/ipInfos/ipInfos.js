@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import styles from "./ipInfos.module.css"
 
 export default function IPInfos({IPLocationData}) {
@@ -21,4 +22,8 @@ export default function IPInfos({IPLocationData}) {
             </div>
         </div>
     )
+}
+
+IPInfos.propTypes = {
+    IPLocationData: PropTypes.object.isRequired
 }

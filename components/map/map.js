@@ -5,7 +5,7 @@ import 'leaflet/dist/leaflet.css';
 
 export default function Map({position}) {
     return (
-        <MapContainer className={styles.container} center={[position.lat + 0.0002, position.lng]} zoom={18} scrollWheelZoom={false} zoomControl={false}>
+        <MapContainer className={styles.container} center={[position.lat + 0.0006, position.lng]} zoom={17} scrollWheelZoom={false} zoomControl={false}>
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

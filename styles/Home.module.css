@@ -51,23 +51,22 @@
 
 @media screen and (min-width: 1024px) {
   .title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 400;
   }
   .section_header {
-    padding: 2.5rem 0;
+    padding: 2rem 0;
     background-size: cover;
     background-position: 85% 0%;
-    height: 300px;
+    height: 264px;
   }
 }
-@media screen and (min-width: 1024px) and (max-height: 580px) {
-  .section_header {
-    height: 280px !important;
-  }
-}
+
 @media screen and (min-width: 1280px) {
+  .title {
+    font-size: 1.8rem;
+  }
   .section_header {
-    height: 310px;
+    height: 294px;
   }
 }

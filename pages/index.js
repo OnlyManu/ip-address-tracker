@@ -5,19 +5,23 @@ import styles from '../styles/Home.module.css'
 import IPSearchbar from '../components/ipSearchbar/ipSearchbar'
 import IPInfos from '../components/ipInfos/ipInfos'
 import IPLoaction from '../components/ipLocation/ipLocation'
+import AlertBox from '../components/alertBox/alertBox'
 
 export default function Home() {
   const [IPLocationData, setIPLocationData] = useState({
-    ip: "192.212.174.101",
-    location: "Brooklyn, NY 10001",
-    timezone: "UTC -05:00",
-    isp: "SpaceX Starlink",
+    ip: "",
+    location: "",
+    timezone: "",
+    isp: "",
     position: {
       lat: 51.505,
       lng: -0.09
     }
   })
-
+  const [error, setError] = useState({
+    state: false,
+    message: ""
+  })
   const searchIPlocationData = async (ip) => {
     try {
       const data = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_PSqAceWFJWfOHr92xwFXrVn1LkkCz&ipAddress=${ip}`).then((response) => {
@@ -25,7 +29,6 @@ export default function Home() {
           return response.json()
         }
       })
-
       if (data) {
         setIPLocationData(IPData => ({
           ip: data.ip,
@@ -37,16 +40,39 @@ export default function Home() {
             lng: parseFloat(data.location.lng)
           }
         }))
+      } else {
+        throw new Error("Sorry we have reached the Api free usage limit")
       }
     } catch (e) {
-      console.log("Error:"+ e)
+      setError(error => ({state: true, message: e}))
     }
+  }
+  const searchUserIPlocationData = async () => {
+    try {
+      const { ip: userIp } = await fetch('https://api.ipify.org?format=json').then((response) => response.json())
+
+      if (userIp) {
+        await searchIPlocationData(userIp)
+      }
+    } catch(e) {
+      setError(error => ({state: true, message: e}))
+    }
+    
+  }
+
+  const showFormatError = () => {
+    setError(error => ({state: true, message: "Enter a valid ip address"}))
+  }
+
+  const closeAlertBox = () => {
+    setError(error => ({...error, state: false}))
   }
   
   useEffect(() => {
-    /*searchIPlocationData("192.212.174.101")*/
+    searchUserIPlocationData()
   }, [])
 
+  console.log(error.message)
   return (
     <div className={styles.container}>
       <Head>
@@ -56,9 +82,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <AlertBox isOpen={error.state} onClick={closeAlertBox}>{[error.message].map(message => ""+message)}</AlertBox>
+        
         <section className={styles.section_header}>
           <h1 className={styles.title}>IP Address Tracker</h1>
-          <IPSearchbar handleEvent={ searchIPlocationData } />
+          <IPSearchbar handleEventSubmit={searchIPlocationData} handleEventError={showFormatError} />
           <IPInfos IPLocationData={IPLocationData} />
         </section>
         <section className={styles.section_map}>

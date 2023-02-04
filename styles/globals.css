@@ -3,6 +3,7 @@
 :root {
   --color-very-dark-gray: hsl(0, 0%, 17%);
   --color-dark-gray: hsl(0, 0%, 59%);
+  --color-red: hsl(0, 82%, 52%);
   --color-white: #fff;
 }
 

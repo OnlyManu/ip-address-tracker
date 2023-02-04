@@ -1,8 +1,9 @@
 import Image from "next/image"
 import { useState } from "react"
+import PropTypes from 'prop-types'
 import styles from "./ipSearchbar.module.css"
 
-export default function IPSearchbar({ handleEvent }) {
+export default function IPSearchbar({ handleEventSubmit, handleEventError }) {
     const [ipAddress, setIpAddress] = useState("")
 
     const isCorrectlyFormated = (ip) => {
@@ -14,7 +15,9 @@ export default function IPSearchbar({ handleEvent }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         if (isCorrectlyFormated(ipAddress)) {
-            /*await handleEvent(ipAddress)*/
+            await handleEventSubmit(ipAddress)
+        } else {
+            handleEventError()
         }
     }
 
@@ -26,4 +29,9 @@ export default function IPSearchbar({ handleEvent }) {
             </button>
         </form>
     )
+}
+
+IPSearchbar.propTypes = {
+    handleEventSubmit: PropTypes.func.isRequired,
+    handleEventError: PropTypes.func
 }
