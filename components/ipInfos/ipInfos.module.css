@@ -13,6 +13,7 @@
     background-color: var(--color-white);
     transform: translateY(50%) translateX(-50%);
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    min-height: 277.9px;
 }
 .info {
     display: flex;
@@ -40,6 +41,7 @@
         row-gap: 2.2rem;
         width: calc(100% - 5rem);
         border-radius: 0.7rem;
+        min-height: 277.89px;
     }
     .info {
         gap: 0.6rem;

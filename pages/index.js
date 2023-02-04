@@ -9,13 +9,13 @@ import AlertBox from '../components/alertBox/alertBox'
 
 export default function Home() {
   const [IPLocationData, setIPLocationData] = useState({
-    ip: "",
-    location: "",
-    timezone: "",
-    isp: "",
+    ip: "8.8.8.8",
+    location: "Mountain View",
+    timezone: "UTC -08:00",
+    isp: "Google LCC",
     position: {
-      lat: 51.505,
-      lng: -0.09
+      lat: 37.38605,
+      lng: -122.08385
     }
   })
   const [error, setError] = useState({
@@ -29,7 +29,7 @@ export default function Home() {
           return response.json()
         }
       })
-      if (data) {
+      if (data) {        
         setIPLocationData(IPData => ({
           ip: data.ip,
           location: data.location.city,
@@ -72,7 +72,6 @@ export default function Home() {
     searchUserIPlocationData()
   }, [])
 
-  console.log(error.message)
   return (
     <div className={styles.container}>
       <Head>

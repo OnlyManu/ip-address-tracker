@@ -1,4 +1,4 @@
-import L from 'leaflet';
+import L from 'leaflet'
 
 export const iconMarker = new L.Icon({
     iconUrl: "/images/icon-location.svg",
