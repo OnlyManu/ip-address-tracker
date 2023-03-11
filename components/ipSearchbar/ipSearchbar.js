@@ -23,7 +23,7 @@ export default function IPSearchbar({ handleEventSubmit, handleEventError }) {
 
     return (
         <form className={styles.container} method="post"  onSubmit={handleSubmit} >
-            <input className={styles.input} placeholder="Search for any IP address or domain" value={ipAddress} onChange={handleChange} />
+            <input className={styles.input} placeholder="Search for any IP address or domain" value={ipAddress} onChange={handleChange} aria-label="Ip address" />
             <button className={styles.btn} >
                 <Image className={styles.btn_icon} src="/images/icon-arrow.svg" height={ 14 } width={ 11 } alt="" />
             </button>
